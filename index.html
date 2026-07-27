@@ -846,6 +846,7 @@ svg.lucide { width: 1.2em; height: 1.2em; stroke-width: 2; }
 @media (max-width: 1023px) and (min-width: 768px) {
   .ways__layout { grid-template-columns: 1fr; }
   .ways__photo { aspect-ratio: 16 / 10; }
+  .ways__photo img { object-position: center 30%; }
   .module__split, .module__split--invert { grid-template-columns: 1fr; }
   .module__photo { position: static; aspect-ratio: 16 / 10; }
   .photo--phone { aspect-ratio: 9 / 16; max-width: 18rem; }
@@ -854,7 +855,8 @@ svg.lucide { width: 1.2em; height: 1.2em; stroke-width: 2; }
 
 @media (max-width: 767px) {
   .ways__layout { grid-template-columns: 1fr; }         /* foto acima do texto */
-  .ways__photo { aspect-ratio: 16 / 11; }
+  .ways__photo { aspect-ratio: 4 / 3; }
+  .ways__photo img { object-position: center 32%; }
   .ways__layout .ways__grid { grid-template-columns: 1fr; }
   .module__split, .module__split--invert { grid-template-columns: 1fr; }
   .module__photo { position: static; aspect-ratio: 16 / 11; }
