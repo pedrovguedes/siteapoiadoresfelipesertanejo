@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe Sertanejo — Deputado Estadual | Seja um apoiador</title>
+  <meta name="description" content="Apoie Felipe Sertanejo, candidato a Deputado Estadual por São Paulo: receba materiais, crie sua foto de apoiador, participe de missões diárias e encontre o comitê da sua cidade." />
+  <meta property="og:title" content="Felipe Sertanejo — Deputado Estadual | Seja um apoiador" />
+  <meta property="og:description" content="Cada gesto conta. Descubra como você pode fortalecer a campanha hoje." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#009C3B" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Fontes: Sora (títulos) + Inter (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HERO — 100vw × 100vh · texto + grande foto do candidato
+       Foto: assets/images/felipe-hero.jpg (retrato em alta)
+  ============================================================= -->
+  <header class="hero" id="hero">
+    <div class="hero__media" data-parallax>
+      <!-- Para usar vídeo de fundo, descomente e adicione o arquivo:
+      <video autoplay muted loop playsinline poster="assets/images/felipe-hero.jpg">
+        <source src="assets/videos/hero.mp4" type="video/mp4" />
+      </video> -->
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__grid container">
+      <div class="hero__content">
+        <p class="hero__kicker" data-hero="1">Deputado Estadual · São Paulo</p>
+        <h1 class="hero__title" data-hero="2">Felipe Sertanejo</h1>
+        <p class="hero__subtitle" data-hero="3">O futuro se constrói com cada pessoa que decide participar.</p>
+      </div>
+
+      <figure class="photo hero__photo" data-hero="5" data-photo-parallax>
+        <img src="assets/images/felipe-hero.jpg" alt="Felipe Sertanejo" loading="eager"
+             onerror="this.closest('.photo').classList.add('photo--empty')" />
+        <span class="photo__placeholder"><i data-lucide="image"></i> Foto: retrato do Felipe Sertanejo</span>
+      </figure>
+    </div>
+
+    <a class="hero__hint" href="#frase" data-hero="4" aria-label="Rolar para o conteúdo">
+      <span>Role para descobrir como ajudar</span>
+      <i data-lucide="chevron-down" class="hero__arrow"></i>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         FRASE PRINCIPAL — uma linha no desktop, mask reveal no scroll
+    ============================================================= -->
+    <section class="phrase" id="frase" aria-label="Como posso ajudar sendo apoiador?">
+      <h2 class="phrase__text">
+        <span class="phrase__base" aria-hidden="true">Como posso ajudar sendo apoiador?</span>
+        <span class="phrase__fill" aria-hidden="true">Como posso ajudar sendo apoiador?</span>
+      </h2>
+    </section>
+
+    <!-- ============================================================
+         FORMAS DE AJUDAR — foto do Felipe (40%) + 4 cards (60%)
+         Foto: assets/images/felipe-apoiadores.jpg
+    ============================================================= -->
+    <section class="ways section" aria-label="Formas de ajudar">
+      <div class="container ways__layout">
+
+        <figure class="photo ways__photo" data-reveal data-photo-parallax>
+          <img src="assets/images/felipe-apoiadores.jpg" alt="Felipe Sertanejo com apoiadores" loading="lazy"
+               onerror="this.closest('.photo').classList.add('photo--empty')" />
+          <span class="photo__placeholder"><i data-lucide="image"></i> Foto: Felipe interagindo com apoiadores</span>
+        </figure>
+
+        <div class="ways__grid">
+          <article class="card way" data-reveal>
+            <span class="way__icon way__icon--verde"><i data-lucide="package"></i></span>
+            <h3 class="way__title">Material em casa</h3>
+            <p class="way__text">Receba gratuitamente materiais oficiais da campanha para divulgar por onde você passa.</p>
+            <a href="#material" class="btn btn--ghost way__btn">Quero receber</a>
+          </article>
+
+          <article class="card way" data-reveal>
+            <span class="way__icon way__icon--amarelo"><i data-lucide="camera"></i></span>
+            <h3 class="way__title">Foto de apoiador</h3>
+            <p class="way__text">Sua foto com a marca da campanha aplicada automaticamente, pronta para as redes.</p>
+            <a href="#foto" class="btn btn--ghost way__btn">Gerar minha foto</a>
+          </article>
+
+          <article class="card way" data-reveal>
+            <span class="way__icon way__icon--azul"><i data-lucide="zap"></i></span>
+            <h3 class="way__title">Missões diárias</h3>
+            <p class="way__text">Uma ação simples por dia — compartilhar, comentar, participar — para fortalecer o movimento.</p>
+            <a href="#missoes" class="btn btn--ghost way__btn">Entrar no grupo</a>
+          </article>
+
+          <article class="card way" data-reveal>
+            <span class="way__icon way__icon--verde"><i data-lucide="landmark"></i></span>
+            <h3 class="way__title">Comitê próximo</h3>
+            <p class="way__text">Encontre onde ajudar presencialmente na sua cidade de São Paulo.</p>
+            <a href="#comite" class="btn btn--ghost way__btn">Encontrar comitê</a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NÚMEROS
+    ============================================================= -->
+    <section class="stats" aria-label="Números da campanha">
+      <div class="container stats__grid">
+        <div class="stat" data-reveal><p class="stat__num" data-to="12500" data-suffix="+">0</p><p class="stat__label">Apoiadores cadastrados</p></div>
+        <div class="stat" data-reveal><p class="stat__num" data-to="340">0</p><p class="stat__label">Cidades com presença</p></div>
+        <div class="stat" data-reveal><p class="stat__num" data-to="98" data-suffix="%">0</p><p class="stat__label">Materiais entregues</p></div>
+        <div class="stat" data-reveal><p class="stat__num" data-to="600" data-suffix="+">0</p><p class="stat__label">Voluntários ativos</p></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MÓDULO 01 — MATERIAL · foto de ação de campanha ao lado
+         Foto: assets/images/felipe-campanha.jpg
+    ============================================================= -->
+    <section class="section module" id="material">
+      <div class="container module__split">
+        <div>
+          <header class="module__header" data-reveal>
+            <p class="eyebrow">Módulo 01 · Material</p>
+            <h2 class="module__title">Receba material da campanha em sua casa</h2>
+            <p class="module__lead">Cadastre-se e receba gratuitamente materiais oficiais — adesivos, bandeiras e panfletos — para ajudar na divulgação no seu bairro, no trabalho e com quem você convive.</p>
+          </header>
+
+          <div data-reveal>
+            <button class="btn btn--verde" id="openMaterialForm">Quero receber</button>
+
+            <form class="form is-hidden" id="materialForm" novalidate>
+              <div class="form__field form__field--wide">
+                <label for="f-nome">Nome completo</label>
+                <input id="f-nome" name="nome" class="input" required minlength="3" autocomplete="name" />
+                <p class="form__error">Informe seu nome completo.</p>
+              </div>
+              <div class="form__field">
+                <label for="f-tel">Telefone</label>
+                <input id="f-tel" name="telefone" class="input" required minlength="10" inputmode="tel" autocomplete="tel" />
+                <p class="form__error">Informe um telefone válido.</p>
+              </div>
+              <div class="form__field">
+                <label for="f-email">E-mail</label>
+                <input id="f-email" name="email" type="email" class="input" required autocomplete="email" />
+                <p class="form__error">Informe um e-mail válido.</p>
+              </div>
+              <div class="form__field">
+                <label for="f-cep">CEP</label>
+                <input id="f-cep" name="cep" class="input" required pattern="\d{5}-?\d{3}" placeholder="00000-000" inputmode="numeric" autocomplete="postal-code" />
+                <p class="form__error">CEP inválido — use o formato 00000-000.</p>
+              </div>
+              <div class="form__field form__field--wide">
+                <label for="f-rua">Rua / Avenida</label>
+                <input id="f-rua" name="rua" class="input" required minlength="2" autocomplete="address-line1" />
+                <p class="form__error">Informe a rua ou avenida.</p>
+              </div>
+              <div class="form__field">
+                <label for="f-num">Número</label>
+                <input id="f-num" name="numero" class="input" required />
+                <p class="form__error">Informe o número.</p>
+              </div>
+              <div class="form__field">
+                <label for="f-comp">Complemento <small>(opcional)</small></label>
+                <input id="f-comp" name="complemento" class="input" />
+              </div>
+              <div class="form__field">
+                <label for="f-bairro">Bairro</label>
+                <input id="f-bairro" name="bairro" class="input" required minlength="2" />
+                <p class="form__error">Informe o bairro.</p>
+              </div>
+              <div class="form__field">
+                <label for="f-cidade">Cidade</label>
+                <input id="f-cidade" name="cidade" class="input" required minlength="2" autocomplete="address-level2" />
+                <p class="form__error">Informe a cidade.</p>
+              </div>
+              <div class="form__field">
+                <label for="f-uf">Estado (UF)</label>
+                <input id="f-uf" name="estado" class="input" required pattern="[A-Za-z]{2}" placeholder="SP" maxlength="2" />
+                <p class="form__error">Use a sigla do estado, ex.: SP.</p>
+              </div>
+              <div class="form__actions">
+                <button type="submit" class="btn btn--verde">Enviar cadastro</button>
+              </div>
+            </form>
+
+            <div class="card notice is-hidden" id="materialOk">
+              <i data-lucide="check-circle-2"></i>
+              <p>Seu material será preparado e em breve entraremos em contato.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="photo module__photo" data-reveal data-photo-parallax>
+          <img src="assets/images/felipe-campanha.jpg" alt="Felipe Sertanejo em ação de campanha" loading="lazy"
+               onerror="this.closest('.photo').classList.add('photo--empty')" />
+          <span class="photo__placeholder"><i data-lucide="image"></i> Foto: Felipe entregando materiais na rua</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MÓDULO 02 — FOTO DE APOIADOR · mockup de celular ao lado
+         Foto: assets/images/mockup-celular.jpg
+    ============================================================= -->
+    <section class="section section--neutro module" id="foto">
+      <div class="container module__split module__split--invert">
+        <figure class="photo module__photo photo--phone" data-reveal data-photo-parallax>
+          <img src="assets/images/mockup-celular.jpg" alt="Celular exibindo a foto de apoiador com a marca da campanha" loading="lazy"
+               onerror="this.closest('.photo').classList.add('photo--empty')" />
+          <span class="photo__placeholder"><i data-lucide="smartphone"></i> Imagem: celular com a foto de apoiador</span>
+        </figure>
+
+        <div>
+          <header class="module__header" data-reveal>
+            <p class="eyebrow">Módulo 02 · Redes sociais</p>
+            <h2 class="module__title">Mostre seu apoio nas redes sociais</h2>
+            <p class="module__lead">Envie uma foto e receba, em segundos, uma versão com a logo da campanha e o número do Felipe aplicados com elegância no canto inferior — pronta para publicar.</p>
+          </header>
+
+          <div data-reveal>
+            <input type="file" id="photoInput" accept="image/*" hidden />
+            <button class="btn btn--verde" id="photoBtn">Gerar minha foto de apoiador</button>
+
+            <div class="photo-result is-hidden" id="photoResult">
+              <img id="photoImg" alt="Sua foto de apoiador com a marca da campanha" loading="lazy" />
+              <div class="photo-result__actions">
+                <a class="btn btn--amarelo" id="photoDownload" download="minha-foto-de-apoiador.jpg">Baixar imagem</a>
+                <button class="btn btn--ghost" id="photoReset">Enviar outra foto</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MÓDULO 03 — MISSÕES · imagem de voluntários ao lado
+         Foto: assets/images/voluntarios.jpg
+    ============================================================= -->
+    <section class="section module" id="missoes">
+      <div class="container module__split">
+        <div>
+          <header class="module__header" data-reveal>
+            <p class="eyebrow">Módulo 03 · Missões</p>
+            <h2 class="module__title">Receba missões diárias da campanha</h2>
+            <p class="module__lead">Todos os dias, uma ação simples que fortalece a campanha. Entre no grupo oficial e participe do movimento.</p>
+          </header>
+
+          <ul class="missions" role="list">
+            <li class="card mission" data-reveal><i data-lucide="clapperboard"></i><span>Compartilhar vídeos</span></li>
+            <li class="card mission" data-reveal><i data-lucide="message-circle"></i><span>Comentar publicações</span></li>
+            <li class="card mission" data-reveal><i data-lucide="map-pin"></i><span>Participar de eventos</span></li>
+            <li class="card mission" data-reveal><i data-lucide="megaphone"></i><span>Divulgar materiais</span></li>
+            <li class="card mission" data-reveal><i data-lucide="shield-check"></i><span>Defender propostas</span></li>
+          </ul>
+
+          <div data-reveal>
+            <button class="btn btn--amarelo" id="groupBtn">Entrar no grupo de apoiadores</button>
+            <div class="group-links is-hidden" id="groupLinks">
+              <a class="btn btn--whatsapp" href="#" target="_blank" rel="noopener"><i data-lucide="message-square"></i> Grupo no WhatsApp</a>
+              <a class="btn btn--telegram" href="#" target="_blank" rel="noopener"><i data-lucide="send"></i> Canal no Telegram</a>
+            </div>
+          </div>
+        </div>
+
+        <figure class="photo module__photo" data-reveal data-photo-parallax>
+          <img src="assets/images/voluntarios.jpg" alt="Voluntários da campanha reunidos" loading="lazy"
+               onerror="this.closest('.photo').classList.add('photo--empty')" />
+          <span class="photo__placeholder"><i data-lucide="users"></i> Foto: voluntários e grupos da campanha</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MÓDULO 04 — COMITÊS EM SÃO PAULO
+         Busca apenas por cidade, com autocomplete.
+         Dados: js/dados-comites.js (arquivo único, escalável)
+    ============================================================= -->
+    <section class="section section--neutro module" id="comite">
+      <div class="container">
+        <header class="module__header" data-reveal>
+          <p class="eyebrow">Módulo 04 · Presencial</p>
+          <h2 class="module__title">Encontre onde ajudar na sua cidade</h2>
+          <p class="module__lead">A campanha do Felipe Sertanejo está presente em todo o Estado de São Paulo. Digite sua cidade para encontrar o comitê ou ponto de apoio mais próximo.</p>
+        </header>
+
+        <div class="finder finder--city" data-reveal>
+          <div class="autocomplete">
+            <input class="input" id="finderCity" placeholder="Digite sua cidade (ex.: Campinas)" aria-label="Cidade"
+                   autocomplete="off" role="combobox" aria-expanded="false" aria-controls="cityList" />
+            <ul class="autocomplete__list is-hidden" id="cityList" role="listbox"></ul>
+          </div>
+          <button class="btn btn--verde" id="finderBtn"><i data-lucide="search"></i> Buscar</button>
+        </div>
+
+        <!-- Resultado: cidade COM atuação -->
+        <article class="card committee is-hidden" id="committeeCard">
+          <span class="badge">Atuação confirmada</span>
+          <h3 class="committee__title" id="cTitle"></h3>
+          <p class="committee__desc is-hidden" id="cDesc"></p>
+          <dl class="committee__info">
+            <div><dt>Liderança</dt><dd id="cLeader"></dd></div>
+            <div><dt>Ponto de apoio</dt><dd id="cAddress"></dd></div>
+            <div><dt>Próximos eventos</dt><dd><ul class="committee__events" id="cEvents"></ul></dd></div>
+          </dl>
+          <div class="committee__actions">
+            <a class="btn btn--verde" id="cMaps" target="_blank" rel="noopener"><i data-lucide="map"></i> Abrir no Google Maps</a>
+            <a class="btn btn--amarelo" id="cWhats" target="_blank" rel="noopener"><i data-lucide="phone"></i> Falar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Resultado: região SEM comitê -->
+        <article class="card committee is-hidden" id="noCommitteeCard">
+          <h3 class="committee__title committee__title--azul" id="noTitle"></h3>
+          <p class="committee__visit" id="noMsg"></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+    ============================================================= -->
+    <section class="cta">
+      <div class="container" data-reveal>
+        <h2 class="cta__title">Cada apoiador escreve uma parte dessa história.</h2>
+        <p class="cta__text">Escolha uma forma de ajudar acima e comece agora.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ — foto institucional + informações da campanha
+       Foto: assets/images/felipe-institucional.jpg
+  ============================================================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <figure class="photo footer__photo" data-reveal data-photo-parallax>
+        <img src="assets/images/felipe-institucional.jpg" alt="Felipe Sertanejo" loading="lazy"
+             onerror="this.closest('.photo').classList.add('photo--empty')" />
+        <span class="photo__placeholder"><i data-lucide="image"></i> Foto institucional do Felipe Sertanejo</span>
+      </figure>
+      <div class="footer__info" data-reveal>
+        <p class="footer__name">Felipe Sertanejo</p>
+        <p class="footer__role">Deputado Estadual · São Paulo</p>
+        <p class="footer__note">Material de campanha · Fale com a coordenação pelos canais oficiais.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bibliotecas -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Código do site -->
+  <script src="dados-comites.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
