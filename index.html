@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -62,15 +63,7 @@
 /* ---------- Reset e base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: auto; } /* o Lenis controla a suavidade */
-html.no-lenis { scroll-behavior: smooth; } /* fallback sem Lenis */
-
-/* CSS oficial recomendado pelo Lenis (evita conflitos de rolagem) */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
-.lenis.lenis-smooth iframe { pointer-events: none; }
+html { scroll-behavior: smooth; } /* rolagem nativa suave, sem bibliotecas */
 
 body {
   font-family: var(--font-body);
@@ -1173,7 +1166,6 @@ svg.lucide { width: 1.2em; height: 1.2em; stroke-width: 2; }
   </footer>
 
   <!-- Bibliotecas -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
@@ -1339,36 +1331,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /* ---------- Scroll suave (Lenis) sincronizado com o ScrollTrigger ---------- */
-  if (window.Lenis) {
-    const lenis = new Lenis({
-      lerp: 0.1,
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
-    });
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((t) => lenis.raf(t * 1000));
-    gsap.ticker.lagSmoothing(0);
-
-    // Garante que o ScrollTrigger use as medidas certas da página
-    ScrollTrigger.refresh();
-
-    // Âncoras internas passam pelo Lenis
-    document.querySelectorAll('a[href^="#"]').forEach((a) =>
-      a.addEventListener("click", (e) => {
-        const target = document.querySelector(a.getAttribute("href"));
-        if (!target) return;
-        e.preventDefault();
-        lenis.scrollTo(target, { offset: 0 });
-      })
-    );
-  } else {
-    document.documentElement.classList.add("no-lenis");
-  }
+  /* ---------- Rolagem nativa (sem Lenis) — mais estável ---------- */
+  // Âncoras internas com rolagem suave nativa
+  document.querySelectorAll('a[href^="#"]').forEach((a) =>
+    a.addEventListener("click", (e) => {
+      const target = document.querySelector(a.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    })
+  );
 
   /* Recalcula os gatilhos depois que fontes e imagens carregam
-     (evita animações "fora do lugar" e travadas no scroll) */
+     (evita animações "fora do lugar") */
   window.addEventListener("load", () => ScrollTrigger.refresh());
   if (document.fonts?.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
 
